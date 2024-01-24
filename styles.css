@@ -1,0 +1,7 @@
+body {
+    background-color: lightcyan;
+  }
+  ul,strong, div {
+    color: darkblue;
+    font-size: large;
+  }

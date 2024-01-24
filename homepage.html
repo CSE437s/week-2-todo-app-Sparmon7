@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="download.png">
+    <title>ToDo App</title>
+  </head>
+  <body>
+   
+        <strong>To-do: </strong> <br>
+        <ul id="list">
+        
+    </ul>
+        
+      <script>
+        function add(){
+            let name = document.getElementById("addItem").value;
+            const isWhitespaceString = str => !/\S/.test(str)
+            if(isWhitespaceString(name)){
+                alert("Please submit an item for the to-do list!");
+            }else{
+                let el = document.createElement('li');
+
+
+            el.innerHTML= name + " ";
+            let butt = document.createElement('button');
+            butt.textContent = 'Done';
+            butt.addEventListener('click', ()=> {
+                alert("Congrats on finishing " + name +"!");
+                butt.parentElement.remove();
+            });
+            el.appendChild(butt);
+            let listy = document.getElementById("list");
+            listy.appendChild(el);
+
+            }
+            document.getElementById("addItem").value = "";
+
+            
+        }
+      </script>
+      <br>
+      <br>
+      
+      <div>
+        Add an item:
+            <input type="text" id="addItem">
+            <input type="submit" value="Submit" id="submit" onclick="add()">
+            <br>
+            <br>
+        </div>
+  </body>
+</html>
